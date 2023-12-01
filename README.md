@@ -25,6 +25,6 @@ Contribuições
 -------------
 ## Licença
 
-Este projeto é licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está sob a Licença Pública Geral GNU Versão 3 - veja o arquivo [LICENSE](LICENSE.md) para detalhes.
 
 ### Divirta-se jogando o Ultimate Tic Tac Toe! 🎮✨
