@@ -1,8 +1,8 @@
 Jogo da Velha 2 // Ultimate Tic Tac Toe
 ====================
 
-Bem-vindo ao repositório do Jogo da velha 2, ou tambem conhecido como Ultimate Tic Tac Toe! Este projeto é uma implementação do jogo na linguagem Golang / GO.
-Feito com objetivo de aprimorar minha logica e minhas habilidades com a linguagem GO.
+Bem-vindo ao repositório do Jogo da velha 2, ou tambem conhecido como Ultimate Tic Tac Toe! Este projeto é uma implementação do jogo na linguagem Python.
+Feito com objetivo de aprimorar minha logica e minhas habilidades com a linguagem.
 
 Sobre o Jogo
 ------------
