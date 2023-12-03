@@ -69,7 +69,7 @@ func ExibirTabuleiroUltimate(tabuleiroUltimate TabuleiroUltimate) {
 func JogarUltimate(tabuleiroUltimate *TabuleiroUltimate, jogador, linha, coluna, subLinha, subColuna int) bool {
 	// Se for a primeira jogada ou a jogada estiver no quadrado correto
 	if (ultimoSubLinha == -1 && ultimoSubColuna == -1) || (linha == ultimoSubLinha && coluna == ultimoSubColuna) {
-		if (*tabuleiroUltimate)[linha][coluna][subLinha][subColuna] == 0 {
+		if (*tabuleiroUltimate)[linha][coluna][subLinha][subColuna] == 0 || (*tabuleiroUltimate)[linha][coluna][subLinha][subColuna] == 3 {
 			(*tabuleiroUltimate)[linha][coluna][subLinha][subColuna] = jogador
 			// Atualiza a última jogada
 			ultimoSubLinha = subLinha
@@ -84,55 +84,26 @@ func JogarUltimate(tabuleiroUltimate *TabuleiroUltimate, jogador, linha, coluna,
 func VerificarVitoriaU(tabuleiro *Tabuleiro) int {
 	// Verifica linhas e colunas para encontrar um vencedor
 	for i := 0; i < 3; i++ {
-		if (tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2]) && (tabuleiro[i][0] != 0) {
+		if tabuleiro[i][0] != 0 && (tabuleiro[i][0] == tabuleiro[i][1] || tabuleiro[i][1] == 3) && (tabuleiro[i][1] == tabuleiro[i][2] || tabuleiro[i][2] == 3) {
 			return tabuleiro[i][0]
 		}
-		if (tabuleiro[0][i] == tabuleiro[1][i] && tabuleiro[1][i] == tabuleiro[2][i]) && (tabuleiro[0][i] != 0) {
+		if tabuleiro[0][i] != 0 && (tabuleiro[0][i] == tabuleiro[1][i] || tabuleiro[1][i] == 3) && (tabuleiro[1][i] == tabuleiro[2][i] || tabuleiro[2][i] == 3) {
 			return tabuleiro[0][i]
 		}
 	}
 	// Verifica diagonais para encontrar um vencedor
-	if (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2]) && (tabuleiro[0][0] != 0) {
+	if tabuleiro[0][0] != 0 && (tabuleiro[0][0] == tabuleiro[1][1] || tabuleiro[1][1] == 3) && (tabuleiro[1][1] == tabuleiro[2][2] || tabuleiro[2][2] == 3) {
 		return tabuleiro[0][0]
 	}
-	if (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0]) && (tabuleiro[0][2] != 0) {
+	if tabuleiro[0][2] != 0 && (tabuleiro[0][2] == tabuleiro[1][1] || tabuleiro[1][1] == 3) && (tabuleiro[1][1] == tabuleiro[2][0] || tabuleiro[2][0] == 3) {
 		return tabuleiro[0][2]
 	}
-	// Verifica se o coringa 'C' (valor 3) forma uma linha de vitória
-	for i := 0; i < 3; i++ {
-		if (tabuleiro[i][0] == 3 || tabuleiro[i][1] == 3 || tabuleiro[i][2] == 3) && (tabuleiro[i][0] == tabuleiro[i][1] || tabuleiro[i][1] == tabuleiro[i][2]) {
-			return 3
-		}
-		if (tabuleiro[0][i] == 3 || tabuleiro[1][i] == 3 || tabuleiro[2][i] == 3) && (tabuleiro[0][i] == tabuleiro[1][i] || tabuleiro[1][i] == tabuleiro[2][i]) {
-			return 3
-		}
-	}
-	if (tabuleiro[0][0] == 3 || tabuleiro[1][1] == 3 || tabuleiro[2][2] == 3) && (tabuleiro[0][0] == tabuleiro[1][1] || tabuleiro[1][1] == tabuleiro[2][2]) {
-		return 3
-	}
-	if (tabuleiro[0][2] == 3 || tabuleiro[1][1] == 3 || tabuleiro[2][0] == 3) && (tabuleiro[0][2] == tabuleiro[1][1] || tabuleiro[1][1] == tabuleiro[2][0]) {
-		return 3
-	}
-
 	// Nenhum vencedor encontrado
 	return 0
 }
 
 // VerificarVitoriaUltimate verifica se há um vencedor no Ultimate Tic Tac Toe
 func VerificarVitoriaUltimate(tabuleiroUltimate *TabuleiroUltimate) int {
-	// Verifica cada tabuleiro menor para um empate
-	for i := 0; i < 3; i++ {
-		for j := 0; j < 3; j++ {
-			if QuadradoMenorEmpatado(&tabuleiroUltimate[i][j]) {
-				// Marca o quadrado menor como coringa
-				for subI := 0; subI < 3; subI++ {
-					for subJ := 0; subJ < 3; subJ++ {
-						tabuleiroUltimate[i][j][subI][subJ] = 3 // 3 representa coringa
-					}
-				}
-			}
-		}
-	}
 	// Verifica cada tabuleiro menor para um vencedor
 	for i := 0; i < 3; i++ {
 		for j := 0; j < 3; j++ {
@@ -142,6 +113,13 @@ func VerificarVitoriaUltimate(tabuleiroUltimate *TabuleiroUltimate) int {
 				for subI := 0; subI < 3; subI++ {
 					for subJ := 0; subJ < 3; subJ++ {
 						tabuleiroUltimate[i][j][subI][subJ] = vencedor
+					}
+				}
+			} else if QuadradoMenorEmpatado(&tabuleiroUltimate[i][j]) {
+				// Marca o quadrado menor como coringa apenas se não houver um vencedor
+				for subI := 0; subI < 3; subI++ {
+					for subJ := 0; subJ < 3; subJ++ {
+						tabuleiroUltimate[i][j][subI][subJ] = 3 // 3 representa coringa
 					}
 				}
 			}
