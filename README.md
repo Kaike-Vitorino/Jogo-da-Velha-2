@@ -1,6 +1,9 @@
-
+![Cover2](https://raw.githubusercontent.com/Kaike-Vitorino/Jogo-da-Velha-2/main/Artes/Jogo_Velha_2.png?token=GHSAT0AAAAAACLE6PCZUX5TUZLOTPPWC5BQZLRGDNA)
 # Jogo da Velha 2 // Ultimate Tic Tac Toe em Golang
-[![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
+<a href="https://golang.org/">
+    <img src="https://static.vecteezy.com/system/resources/previews/012/697/296/original/3d-golang-programming-language-logo-free-png.png" alt="Go" width="100"/>
+</a>
+
 ## Descrição do Projeto
 Bem-vindo ao repositório do Jogo da Velha 2, também conhecido como Ultimate Tic Tac Toe! Este projeto é uma implementação do jogo na linguagem GO / Golang. Feito com o objetivo de aprimorar minha lógica e minhas habilidades com a linguagem.
 
@@ -18,11 +21,25 @@ O Ultimate Tic Tac Toe é uma variação do jogo da velha padrão, no qual cada 
 
 ## Como Executar
 
-?????????????
+1. **Clone o Repositório:**
+   ```bash
+   git clone https://github.com/Kaike-Vitorino/Jogo-da-Velha-2.git
+   ```
 
-## Contribuições
+2. **Navegue até o Diretório do Projeto:**
+   ```bash
+   cd Jogo-da-Velha-2
+   ```
 
-Sinta-se à vontade para contribuir para o projeto! Se encontrar problemas ou tiver ideias para melhorias, abra uma [issue](https://github.com/seu-usuario/seu-repositorio/issues) ou envie um [pull request](https://github.com/seu-usuario/seu-repositorio/pulls).
+3. **Compile o Código Go:**
+   ```bash
+   go build
+   ```
+
+4. **Execute o Programa Compilado:**
+   ```bash
+   .\Jogo-dad-Velha-2.exe
+   ```
 
 ## Licença
 
