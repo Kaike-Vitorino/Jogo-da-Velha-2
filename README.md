@@ -1,7 +1,7 @@
-![Cover2](https://raw.githubusercontent.com/Kaike-Vitorino/Jogo-da-Velha-2/main/Artes/Jogo_Velha_2.png?token=GHSAT0AAAAAACLE6PCZUX5TUZLOTPPWC5BQZLRGDNA)
+![Cover2](https://raw.githubusercontent.com/Kaike-Vitorino/Jogo-da-Velha-2/main/Artes/Jogo_Velha_2.png?token=GHSAT0AAAAAACLE6PCYXQWOREIGVW52OXX2ZLRHCTQ)
 # Jogo da Velha 2 // Ultimate Tic Tac Toe em Golang
 <a href="https://golang.org/">
-    <img src="https://static.vecteezy.com/system/resources/previews/012/697/296/original/3d-golang-programming-language-logo-free-png.png" alt="Go" width="100"/>
+    <img src="https://raw.githubusercontent.com/Kaike-Vitorino/Jogo-da-Velha-2/main/Artes/3d-golang-programming-language-logo-free-png.png?token=GHSAT0AAAAAACLE6PCYWU6A453OURLDXP6QZLRHCRQ" alt="Go" width="100"/>
 </a>
 
 ## Descrição do Projeto
@@ -38,7 +38,7 @@ O Ultimate Tic Tac Toe é uma variação do jogo da velha padrão, no qual cada 
 
 4. **Execute o Programa Compilado:**
    ```bash
-   .\Jogo-dad-Velha-2.exe
+   .\Jogo-da-Velha-2.exe
    ```
 
 ## Licença
